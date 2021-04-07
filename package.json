@@ -1,0 +1,42 @@
+{
+  "name": "codeio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "out/node/main.js",
+  "scripts": {
+    "clean": "rimraf out",
+    "transpile": "babel --presets @babel/preset-env ./src/node --out-dir out/node",
+    "bundle": "webpack --config webpack.config.js",
+    "build": "npm-run-all clean transpile bundle && cp ./src/browser/index.html ./out/browser/index.html",
+    "start": "electron . --disable-dev-shm-usage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frandy-yulia/codeio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/frandy-yulia/codeio/issues"
+  },
+  "homepage": "https://github.com/frandy-yulia/codeio#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.13.14",
+    "@babel/core": "^7.13.14",
+    "@babel/preset-env": "^7.13.12",
+    "@babel/preset-react": "^7.13.13",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.2.0",
+    "electron": "3.0.7",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.30.0",
+    "webpack-cli": "^4.6.0"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
