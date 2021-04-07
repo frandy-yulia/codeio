@@ -1,0 +1,64 @@
+.Header {
+    width: 100%;
+    background-color: #333;
+    color: #ADADAD;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Header .left {
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.Header .left .name {
+    color: rgb(68, 148, 240);
+    font-weight: 800;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.Header .right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.Header .right > .icon {
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.Header .right .icon {
+    fill: #ADADAD;
+}
+
+
+.Header .right .icon:hover {
+    fill: white;
+    background-color: rgb(83, 83, 83);
+}
+
+.Header .right .close:hover {
+    background-color: red;
+    fill: white;
+}
+
+.drag {
+    -webkit-app-region: drag;
+}
+
+
+.no-drag {
+    -webkit-app-region: no-drag;
+}
