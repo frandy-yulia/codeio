@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {remote} from 'electron';
+import MenuBar from '../menubar';
 
 import './styles.css';
 
@@ -68,7 +69,7 @@ class Header extends Component {
                     <div className="name">
                         <span>codeio</span>
                     </div>
-                    {/* <Menu/> */}
+                    <MenuBar/>
                 </div>
                 <div className="right no-drag">
                     <div className="minimize icon clickable" onClick={() => this.hendleMinimizeWindow(win)}>
