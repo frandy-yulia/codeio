@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Header from './header';
 
 
+
 import './App.css';
 
 class App extends Component {
@@ -10,7 +11,11 @@ class App extends Component {
         return (
             <div className="App">
                 <Header/>
-                halo world!
+                <div className="row">
+                    <span>u</span>
+                    <span style={{color: 'white'}}>editor</span>
+                </div>
+                <footer>footer</footer>
             </div>
         );
     }
