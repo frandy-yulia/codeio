@@ -14,7 +14,7 @@
     position: fixed;
     top: 30px;
     min-width: 200px;
-    z-index: 100;
+    z-index: 401;
     background-color: #2D2F31;
     border-bottom-right-radius: 2px;
     border-bottom-left-radius: 2px;
@@ -22,7 +22,7 @@
 }
 
 .MenuBar .clickableOverlay {
-    z-index: 99;
+    z-index: 400;
     position: absolute;
     top: 0;
     left: 0;
