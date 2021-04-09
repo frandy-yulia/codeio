@@ -1,0 +1,63 @@
+.ModalBox {
+    position: absolute;
+    top: 35px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 500;
+    box-sizing: border-box;
+}
+
+.ModalBox .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.ModalBox .container .top {
+    background-color: #2D2F31;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    box-shadow: 0 3px 10px black;
+    padding: 6px;
+    width: 40%;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+}
+
+.ModalBox .container .top .label {
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.ModalBox .container .top .row {
+    display: flex;
+    flex-direction: row;
+    padding: 4px;
+    height: 100%;
+    justify-content: space-between;
+}
+
+
+.ModalBox .container .top .row input {
+    width: 100%;
+    color: white;
+    padding: 2px;
+    border: 0.7px solid #3984da;
+    background-color: rgb(77, 76, 76);
+    margin-right: 2px;
+}
+
+.ModalBox .container .top .row button {
+    border: none;
+    margin-left: 2px;
+    background-color: #266daf;
+    color: white;
+}
+
+.ModalBox .container .top .row button:hover {
+    background-color: #3287cd;
+}

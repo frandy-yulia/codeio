@@ -10,6 +10,7 @@ class MenuBar extends Component {
         super(props);
         this.state = {
             selected: null,
+            message: null,
             collapsed: {
                 file: true
             }
@@ -33,7 +34,7 @@ class MenuBar extends Component {
 
     renderModal() {
         return (
-            <ModalBox onSelected={() => this.state.selected} />
+            <ModalBox onSelected={() => this.state.selected} message={this.state.message} />
         );
     }
 
@@ -43,9 +44,10 @@ class MenuBar extends Component {
             <div className="menuItem">
             <span className="title clickable" children="File" onClick={() => this.toggle('file')} />
             {!collapsed && (
-                <FileMenu onSelectedChild={(selectedChild) => {
+                <FileMenu onSelectedChild={(selectedChild,message) => {
                     if(selectedChild){
-                        this.setState({selected: selectedChild})
+                        this.setState({selected: selectedChild});
+                        this.setState({message})
                         this.collapseAll();
                     }
                 }}/>

@@ -12,7 +12,7 @@ class FileMenu extends Component {
     }
     
     hendleOpenFolder() {
-        this.props.onSelectedChild(!this.state.selectedChild,'open-folder')
+        this.props.onSelectedChild(!this.state.selectedChild,'Open Folder');
     }
 
     render() {
