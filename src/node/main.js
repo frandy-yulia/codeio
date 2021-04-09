@@ -1,5 +1,5 @@
-import {app,BrowserWindow} from 'electron';
-
+import {app,BrowserWindow,ipcMain} from 'electron';
+import Api from './api';
 
 let win;
 
@@ -10,11 +10,13 @@ function createWindow () {
         height: 700,
         minWidth: 400,
         minHeight: 300,
-        frame: false
+        frame: false,
+        
     })
 
   // and load the index.html of the app.
     win.loadFile(__dirname.replace('node','browser/index.html'));
+    Api.init(ipcMain);
 
   // Open the DevTools.
     win.webContents.openDevTools()
