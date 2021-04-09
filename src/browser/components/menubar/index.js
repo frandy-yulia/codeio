@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import FileMenu from './FileMenu';
 
+import ModalBox from '../modalbox';
+
 import './styles.css';
 
 class MenuBar extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            selected: null,
             collapsed: {
                 file: true
             }
@@ -28,12 +31,24 @@ class MenuBar extends Component {
         this.setState({ collapsed });
     }
 
+    renderModal() {
+        return (
+            <ModalBox onSelected={() => this.state.selected} />
+        );
+    }
+
+
     renderFileMenu(collapsed) {
         return (
             <div className="menuItem">
             <span className="title clickable" children="File" onClick={() => this.toggle('file')} />
             {!collapsed && (
-                <FileMenu />
+                <FileMenu onSelectedChild={(selectedChild) => {
+                    if(selectedChild){
+                        this.setState({selected: selectedChild})
+                        this.collapseAll();
+                    }
+                }}/>
             )}
         </div>
         );
@@ -44,6 +59,8 @@ class MenuBar extends Component {
             <div className="MenuBar">
                 {this.renderFileMenu(this.state.collapsed.file)}
                 {!this.menuCollapsed && <div className="clickableOverlay no-drag" onClick={this.collapseAll.bind(this)} />}
+
+                {(this.state.selected === null) ? '' : this.renderModal()}
             </div>
         );
     }

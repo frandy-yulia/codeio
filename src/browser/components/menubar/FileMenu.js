@@ -2,9 +2,17 @@ import React, { Component } from 'react';
 import {ipcRenderer} from 'electron';
 
 class FileMenu extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            selected: null,
+            selectedChild: false
+        }
+    }
     
     hendleOpenFolder() {
-        ipcRenderer.send('open-folder','halo test')
+        this.props.onSelectedChild(!this.state.selectedChild,'open-folder')
     }
 
     render() {
