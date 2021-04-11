@@ -1,4 +1,5 @@
 import React,{ Component } from 'react';
+import {ipcRenderer} from 'electron';
 
 import './styles.css';
 
@@ -8,7 +9,8 @@ class ModalBox extends Component {
         this.state = {
             selected: null,
             message: null,
-            value: null
+            value: null,
+            isSend: false
         }
     }
 
@@ -22,7 +24,8 @@ class ModalBox extends Component {
     }
 
     hendleClick() {
-        console.log(this.state.value);
+        ipcRenderer.send(this.props.message,this.state.value);
+        this.props.onClick();
     }
 
     hendleChange(e) {

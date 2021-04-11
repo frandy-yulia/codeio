@@ -4,7 +4,7 @@ class Api {
     }
 
     hendleOpenFolder(channel) {
-        channel.on('open-folder',(event,arg) => {
+        channel.on('Open Folder',(event,arg) => {
             console.log(arg);
         });
     }
