@@ -25,6 +25,8 @@ class ModalBox extends Component {
 
     hendleClick() {
         ipcRenderer.send(this.props.message,this.state.value);
+        ipcRenderer.send('project-name',this.state.value.split('/'));
+        
         this.props.onClick();
     }
 

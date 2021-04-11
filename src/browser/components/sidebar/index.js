@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {ipcRenderer} from 'electron';
 import Toolbar from '../toolbar';
 
 import './styles.css';
@@ -9,6 +10,11 @@ class Sidebar extends Component {
         this.state = {
             selectedTool: null
         }
+
+        ipcRenderer.on('opened-folder', function (evt, message) {
+            console.log(message);
+        }.bind(this));
+        
     }
 
     renderSelectedTool() {

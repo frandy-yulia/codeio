@@ -1,11 +1,16 @@
+import readdir from './readdir';
+
 class Api {
-    init(channel) {
-        this.hendleOpenFolder(channel);
+    init(channel,win) {
+        this.hendleOpenFolder(channel,win);
     }
 
-    hendleOpenFolder(channel) {
+    hendleOpenFolder(channel,win) {
         channel.on('Open Folder',(event,arg) => {
-            console.log(arg);
+            const arga = arg.split('/');
+            const name = arga[arga.length - 1];
+            const all = readdir(arg);
+            win.webContents.send('opened-folder', {name,all});
         });
     }
 }

@@ -16,7 +16,7 @@ function createWindow () {
 
   // and load the index.html of the app.
     win.loadFile(__dirname.replace('node','browser/index.html'));
-    Api.init(ipcMain);
+    Api.init(ipcMain,win);
 
   // Open the DevTools.
     win.webContents.openDevTools()
