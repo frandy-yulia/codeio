@@ -34,7 +34,7 @@ class MenuBar extends Component {
 
     renderModal() {
         return (
-            <ModalBox onSelected={() => this.state.selected} message={this.state.message} />
+            <ModalBox onClick={() => this.setState({selected: null})} onSelected={() => this.state.selected} message={this.state.message} />
         );
     }
 

@@ -15,7 +15,7 @@ class ModalBox extends Component {
 
     render() {
         return (
-            <div className="ModalBox">
+            <div className="ModalBox" {...this.props}>
                 <div className="container">
                     <div className="top">
                         <div className="label">{this.props.message}</div>
