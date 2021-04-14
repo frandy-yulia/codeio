@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {ipcRenderer} from 'electron';
 import Toolbar from '../toolbar';
 import Explorer from '../explorer';
 
@@ -10,27 +9,17 @@ class Sidebar extends Component {
         super(props);
         this.state = {
             selectedTool: null,
-            project: null
+            project: {name: 'No Open Folder'}
         }
         
-    }
-
-    componentDidMount() {
-        ipcRenderer.on('opened-folder', function (evt, message) {
-            this.setState({project: message});
-        }.bind(this));
     }
 
     renderSelectedTool() {
         switch(this.state.selectedTool){
             case 'explorer': 
-                console.log(this.state.project);
-                
                 return ( 
                     <div className="container">
-                        <Explorer
-                            project={(this.state.project !== null) ? this.state.project : {}}
-                        />
+                        <Explorer/>
                     </div>
                 );
         }
