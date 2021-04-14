@@ -3,6 +3,7 @@ import {ipcRenderer} from 'electron';
 
 
 import './styles.css';
+import FileTree from '../filetree';
 
 class Explorer extends Component {
 
@@ -21,7 +22,11 @@ class Explorer extends Component {
 
     renderFileTree() {
         const {project} = this.state;
-        
+        return (
+            <FileTree 
+                projectName={(project != null) ? project.name : 'No Open Folder'}
+            />
+        );
     }
 
     render() {

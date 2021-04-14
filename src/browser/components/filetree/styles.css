@@ -1,0 +1,157 @@
+.FileTree {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.FileTree .title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.FileTree .title .icon {
+    fill: #e8e8e8;
+}
+
+.FileTree .rootTitle {
+    justify-content: space-between;
+    background-color: #383838;
+    height: 24px;
+    color: #CCCCCC;
+    padding-left: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    box-shadow: 1px 1px 3px black;
+}
+
+.FileTree .rootTitle .column {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.FileTree .rootTitle .column {
+    z-index: 50;
+}
+
+.FileTree .rootTitle .right.column {
+    display: none;
+    position: fixed;
+    left: 146px;
+    background-color: #383838;
+    height: 23px;
+}
+
+.FileTree:hover .rootTitle .right.column {
+    display: initial;
+}
+
+.FileTree .rootTitle .right.column .icon {
+    margin: 5px;
+}
+
+.FileTree .rootContent {
+    height: inherit;
+    overflow-y: auto;
+    overflow-x: hidden;
+    opacity: 0;
+}
+
+.FileTree .rootContent.visible {
+    opacity: 1;
+}
+
+.FileTree .node {
+    height: 22px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    color: #CBCBCB;
+    cursor: pointer;
+}
+
+.FileTree .node .title {
+    font-size: 13px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.FileTree .node .icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    fill: #CBCBCB;
+}
+
+.FileTree .node:hover {
+    background-color: #2A2D2E;
+}
+
+.FileTree .node.active, .FileTree .node.active:hover {
+    background-color: #094771;
+}
+
+.FileTree .subnodes:not(.no-padding), .FileTree .subnodes .node {
+    padding-left: 14px;
+    width: auto;
+}
+
+.FileTree .ItemFile .node {
+    padding-left: 35px;
+    width: 100%;
+}
+
+.FileTree .node input {
+    outline: none;
+    background-color: #383838;
+    border: 1px solid #094771;
+    color: #CBCBCB;
+    font-size: 13px;
+}
+
+.ArchiveMenu .menuItem {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    min-width: 150px;
+    z-index: 100;
+    background-color: #2D2F31;
+    border-radius: 2px;
+    box-shadow: 0 3px 10px black;
+}
+
+.ArchiveMenu .menuItem div.item {
+    color: #BBBBBB;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 3px 10px;
+    font-size: 12px;
+}
+
+.ArchiveMenu .menuItem div.item:hover {
+    background-color: #3A3A3A;
+}
+
+.ArchiveMenu .menuItem div.separator {
+    margin: 5px auto 5px auto;
+    width: 85%;
+    height: 1px;
+    background-color: #444546;
+}
+
+.ArchiveMenu .clickableOverlay {
+    z-index: 99;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
